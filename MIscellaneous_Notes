@@ -1,0 +1,22 @@
+Difference between output of "fdisk -l" when run on a raw disk and when run on a filesystem formatted disk 
+
+# fdisk -l /dev/sda  // formatted with filesystem
+
+Disk /dev/sda: 146.2 GB, 146163105792 bytes, 285474816 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x0000aa01
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200   285474815   141687808   8e  Linux LVM
+
+# fdisk -l /dev/sdex // raw disk
+
+Disk /dev/sdex: 1099.5 GB, 1099512545280 bytes, 2147485440 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
